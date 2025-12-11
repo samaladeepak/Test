@@ -44,3 +44,5 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/testimage:latest
             ${{ secrets.DOCKER_USERNAME }}/testimage:${{ steps.vars.outputs.TAG }}
+
+
