@@ -19,8 +19,8 @@ jobs:
       # Step 2: Debug workspace (confirm Dockerfile exists)
       - name: List files in repo root
         run: |
-          echo "Workspace: ${{ github.workspace }}"
-          ls -al ${{ github.workspace }}
+          echo "Workspace: ${{ github.workspace }}/application-service"
+          ls -al ${{ github.workspace }}/application-service
 
       # Step 3: Log in to Docker Hub
       - name: Log in to Docker Hub
@@ -42,8 +42,8 @@ jobs:
           file: ${{ github.workspace }}/application-service/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/testimage:latest
-            ${{ secrets.DOCKER_USERNAME }}/testimage:${{ steps.vars.outputs.TAG }}
+            ${{ secrets.DOCKER_USERNAME }}/app-service-image:latest
+            ${{ secrets.DOCKER_USERNAME }}/app-service-image:${{ steps.vars.outputs.TAG }}
 
 
 
