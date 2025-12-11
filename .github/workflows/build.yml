@@ -38,11 +38,12 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
         with:
-          context: ${{ github.workspace }}               # Repo root
-          file: ${{ github.workspace }}/Dockerfile       # Absolute path to Dockerfile
+          context: ${{ github.workspace }}
+          file: ${{ github.workspace }}/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/testimage:latest
             ${{ secrets.DOCKER_USERNAME }}/testimage:${{ steps.vars.outputs.TAG }}
+
 
 
