@@ -35,6 +35,11 @@ jobs:
           context: .
           push: true
           tags: |
+<<<<<<< HEAD
             ${{ secrets.DOCKER_USERNAME }}/my-app:latest
             ${{ secrets.DOCKER_USERNAME }}/my-app:${{ steps.vars.outputs.TAG }}
 
+=======
+            ${{ secrets.DOCKER_USERNAME }}/image1:latest
+            ${{ secrets.DOCKER_USERNAME }}/image1:${{ steps.vars.outputs.TAG }}
+>>>>>>> a63da1b78caf05b51b3924be08339efe65f9deb2
