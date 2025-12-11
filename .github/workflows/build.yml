@@ -38,8 +38,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
         with:
-          context: ${{ github.workspace }}
-          file: ${{ github.workspace }}/Dockerfile
+          context: ${{ github.workspace }}/application-service
+          file: ${{ github.workspace }}/application-service/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/testimage:latest
