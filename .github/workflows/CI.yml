@@ -1,9 +1,14 @@
 name: Build and Push Docker Image to Docker Hub
 
-#on:
-  #push:
-    #branches: [ "main" ]
-  #workflow_dispatch:
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+
+permissions:
+  contents : read
+  id-token : 'write'
 
 jobs:
   build-and-push:
@@ -13,6 +18,12 @@ jobs:
       # Step 1: Checkout the code
       - name: Checkout source code
         uses: actions/checkout@v4
+
+      #- id: auth
+        #uses: google-github-actions/auth@v2.0.0
+        #with:
+          #workload_identity_provider: 'projects/project-id/locations/global/WorkloadIdentityPools/nameofthepool/providers/github'
+          #service_account: 'poolname@projectname.iam.gserviceaccount.com'
 
       # Step 2: Log in to Docker Hub
       - name: Log in to Docker Hub
