@@ -6,3 +6,5 @@ COPY src/index.js ./
 EXPOSE 8001
 #  CMD ["node", "src/index.js"]
 CMD ["sh", "-c", "node src/index.js & sleep 300"]
+
+
