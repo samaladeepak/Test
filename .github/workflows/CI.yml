@@ -1,10 +1,10 @@
 name: Build and Push Docker Image to Docker Hub
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-
+#on:
+#  push:
+#    branches: [ "main" ]
+#  pull_request:
+#
 
 permissions:
   contents : read
